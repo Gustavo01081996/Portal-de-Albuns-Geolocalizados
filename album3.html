@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title> Praias de Pernambuco </title>
+</head>
+<body>
+     <header>
+        <nav class="navbar navbar-expand-lg text-bg-primary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="index.html"><img id = "Logotipo"src="Logo_praia.png"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link text-light" href="index.html"><strong> Home </strong></a>
+                    <a class="nav-link text-light" href="#destaques"> <strong>Álbuns </strong></a>
+                    <a class="nav-link text-light"  href="#albuns"> <strong>Itens </strong></a>
+                </div>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <main>
+        <div class="container-fluid">
+            <div class="row mt-5 ps-3 pe-3">
+                <div class="col-md-9 col-sm-9" id="destaques">
+                </div>
+                <div  class="col-md-2 col-sm-2">
+                    <button type="button" id="btnPostar" onclick="postar()" class="btn btn-primary"> Adicionar aos Destaques </button>
+                </div>
+            </div>
+            <div class="row px-3 mt-4"id="primeiraLinhaAlbum1" >
+                
+            </div>
+            <div class="row mt-5 px-3">
+                <div class="col-12" id="albuns">
+                    <h3> Itens - Fotos / Vídeos </h3>
+                </div>
+            </div>
+            <div class="row mt-4 px-3" id="segundaLinhaAlbum1">
+            </div>
+            <div class="row mt-4 px-3" id="terceiraLinhaAlbum1">
+            </div>
+            <div class="row mt-4 px-3" id="quartaLinhaAlbum1">
+            </div>
+        </div>
+        
+       
+
+
+    </main>
+    <script>
+      let imprimePrimeiraLinha = ' ';
+      let imprimeSegundaLinha = ' ';
+      let imprimeTerceiraLinha = ' ';
+      let xhr = new XMLHttpRequest();  
+          xhr.open('GET', 'https://jsonserver-8.gustavovilarino.repl.co/fotos?id=3', true); 
+          xhr.send(null);
+          xhr.onload = function() {
+          let detalhes1 = JSON.parse(xhr.responseText);
+
+          if(this.readyState == 4 && xhr.status == "200")
+          {
+              for(let i= 0; i < 4; i++)
+              {
+                 
+                imprimePrimeiraLinha += `<div class="col-md-3 col-sm-12 ps-3">
+                  <a href="Zoom/modal${i+1}.html"><div class="card" style="width: 100%;">
+                       <img src="${detalhes1[i].url}" class="card-img-top">
+                       <div class="card-body" >
+                         <p class="card-text text-center"><strong>${detalhes1[i].titulo}</strong> </p>
+                         <p class="card-text">${detalhes1[i].descricao}</p>
+                       </div>
+                     </div></a>
+               </div>`
+              }
+              document.getElementById('segundaLinhaAlbum1').innerHTML = imprimePrimeiraLinha;
+            for(let i= 4; i < 8; i++)
+              {
+
+                  imprimeSegundaLinha += `<div class="col-md-3 col-sm-12 ps-3">
+                  <a href="Zoom/modal${i+1}.html"><div class="card" style="width: 100%;">
+                       <img src="${detalhes1[i].url}" class="card-img-top">
+                       <div class="card-body" >
+                         <p class="card-text text-center"><strong>${detalhes1[i].titulo}</strong> </p>
+                         <p class="card-text">${detalhes1[i].descricao}</p>
+                       </div>
+                     </div></a>
+               </div>`
+              }
+              document.getElementById('terceiraLinhaAlbum1').innerHTML = imprimeSegundaLinha;
+            for(let i= 8; i < 12; i++)
+              {
+
+                imprimeTerceiraLinha += `<div class="col-md-3 col-sm-12 ps-3">
+                  <a href="Zoom/modal${i+1}.html"><div class="card" style="width: 100%;">
+                       <img src="${detalhes1[i].url}" class="card-img-top">
+                       <div class="card-body" >
+                         <p class="card-text text-center"><strong>${detalhes1[i].titulo}</strong> </p>
+                         <p class="card-text">${detalhes1[i].descricao}</p>
+                       </div>
+                     </div></a>
+               </div>`
+              }
+              document.getElementById('quartaLinhaAlbum1').innerHTML = imprimeTerceiraLinha;
+
+            
+          }
+
+          else
+          {
+              console.log('Erro ao carregar detalhes da foto')
+          }
+
+      }
+
+      xhr3 = new XMLHttpRequest();
+      xhr3.open('GET', 'https://jsonserver-8.gustavovilarino.repl.co/album', true);
+      xhr3.send(null);
+      xhr3.onload = function() {
+        let detalhes2 = JSON.parse(xhr3.responseText);
+        if(xhr3.readyState == 4 && xhr3.status == "200")
+        {
+          let imprimeQuintaLinha = ' ';
+
+          for(i=2; i<3; i++) 
+            {
+              imprimeQuintaLinha += `<h3>Álbum: ${detalhes2[i].titulo}</h3>`;
+
+            }
+          document.getElementById('destaques').innerHTML = imprimeQuintaLinha;
+
+          let imprimeSextaLinha = ' '; 
+            for(let i=2; i<3; i++)
+              {
+                imprimeSextaLinha += `<div class="col-md-3 col-sm-12">
+                    <img src="${detalhes2[i].url}" style="max-width: 100%">
+                </div>
+                <div class="col-md-8 col-sm-12">
+                    <h4>Descrição </h4>
+                     <p><strong>${detalhes2[i].titulo}: </strong>${detalhes2[i].descricao}</p>
+                        <div>
+                            <label><strong> Localização: </strong> ${detalhes2[i].localizacao} </label>
+                            <label><strong>Data de Registro: </strong>${detalhes2[i].data}</label>
+                    </div>
+
+                </div>`
+              }
+
+           document.getElementById('primeiraLinhaAlbum1').innerHTML = imprimeSextaLinha;
+   
+        }
+        else {
+          console.log('Erro ao carregar JSON')
+        }
+      }
+
+     
+    function postar()
+    {
+    
+      var id_album = 0;
+      var desc = ' ';
+      data = new XMLHttpRequest();
+      data.open('GET', 'https://jsonserver-8.gustavovilarino.repl.co/album', true);
+      data.send(null);
+      data.onload = function()
+      {
+        info = JSON.parse(data.responseText);
+        if(data.readyState == 4 && data.status == "200")
+        {
+          for(let i=2; i<3; i++) 
+          {
+            id_album = info[i].id;
+            desc = info[i].descricao;
+          }
+
+            post(id_album, desc);
+        }
+        else
+        {
+          console.log('Erro ao carregar ')
+        }
+      }
+
+      
+    }
+
+    function post(id_al, descr)
+    {
+
+     var dados = {}
+        
+        dados.id_album = id_al,
+        dados.texto = descr
+        
+      
+
+      var json = JSON.stringify(dados);
+
+      var pstr = new XMLHttpRequest();
+      pstr.open('POST', 'https://jsonserver-8--gustavovilarino.repl.co/destaques', true);
+      pstr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+      pstr.onload = function()
+      {
+        var objPstr = JSON.parse(pstr.responseText);
+        if(pstr.readyState == 4 && pstr.status == "201")
+        {
+           
+            alert("Inserção realizada com sucesso");
+        }
+        else
+        {
+         
+          alert("Erro na inserção do album nos destaques");
+        }
+      }
+      pstr.send(json); 
+      
+    }
+
+      
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

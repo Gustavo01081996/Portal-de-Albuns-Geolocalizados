@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css' rel='stylesheet' />
+  <title> Portal de Álbuns Geolocalizadas </title>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img id="Logotipo" src="Logo_praia.png"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link text-light" href="#destaques"><strong>Destaques </strong></a>
+            <a class="nav-link text-light" href="#albuns"> <strong>Álbuns </strong></a>
+            <a class="nav-link text-light" href="#conteudo-autoria"> <strong>Contatos </strong></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="container-fluid">
+      <div class="row mt-5 px-3">
+        <div class="col-md-12 col-sm-12" id="destaques">
+          <h3> Destaques </h3>
+        </div>
+      </div>
+      <div class="row mx-2">
+        <div class="col-md-12 col-sm-12 mt-4">
+          <div id="carouselExampleCaptions" class="carousel slide">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+              <div id="quantSlides">
+              </div>
+            </div>
+            <div class="carousel-inner" id="conteudoDestaques">
+
+
+
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+              data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+              data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+      <div class="row mt-5 mb-4 px-3">
+        <div class="col-md-12 col-sm-12" id="mapa">
+          <h3> Mapa </h3>
+        </div>
+      </div>
+      <div class="row mx-2">
+        <div class="col-md-12 col-sm-12" id="map">
+
+        </div>
+      </div>
+      <div class="row mt-5 px-3">
+        <div class="col-md-12 col-sm-12" id="albuns">
+          <h3> Lista de Álbuns </h3>
+        </div>
+      </div>
+      <div id="conteudoAlbum">
+        <div class="row mt-4 px-3 post-list" id="primeiraLinha"></div>
+        <div class="row mt-4 px-3 post-list" id="segundaLinha"></div>
+
+      </div>
+    </div>
+    </div>
+  </main>
+  <footer>
+    <div class="container-fluid">
+      <div class="row mt-5 px-3">
+        <div class="col-12" id="creditos">
+          <h3> Créditos </h3>
+        </div>
+      </div>
+      <div class="row mt-4 text-bg-primary pt-3 ">
+        <div class="col-md-6 col-sm-12" id="texto-sobre">
+          <h4> Sobre</h4>
+          <p> Página desenvolvida para os amantes de praias. Aqui você encontra diversas opções, separadas pelo estado
+            brasileiro
+            onde elas se encontram. Além de poder ver as imagens, você tem acesso à descrições das mesmas. É uma ótima
+            oportunidade
+            para você conhecer novas belezas naturais.
+          </p>
+        </div>
+        <div class="col-md-4 col-sm-12" id="conteudo-autoria">
+          <h4> Autoria</h4>
+          <img id="foto-autoria" src="Autoria.jpeg" alt="Foto do Desenvolvedor">
+          <div id="footer_conteudo_autoria">
+            <p><strong>Desenvolvedor:</strong> Gustavo de Assis Vilarino </p>
+            <p><strong>Curso:</strong> Sistemas de Informação </p>
+            <p><strong>Faculdade:</strong> PUC MINAS </p>
+          </div>
+          <h4> Redes Sociais </h4>
+          <a href="https://instagram.com/gu_vilarino?igshid=MzRlODBiNWFlZA==" style="color: white"><i
+              class="fa-brands fa-instagram"></i></a>
+          <a href="https://github.com/Gustavo01081996" style="color: white"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/gustavo-vilarino-434a9925a/" style="color: white"><i
+              class="fa-brands fa-linkedin"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+  <script src="https://kit.fontawesome.com/a863a109f1.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
+
+  <script>
+
+    let albuns = [{
+      id: 1,
+      titulo: 'Praias da Bahia',
+      descricao: 'As belezas naturais da região agradam desde os turistas mais despojados até os mais exigentes. A variedade de praias é tão grande que o viajante tem à sua disposição opções diversas e de acordo com a preferência do momento!',
+      latlong: [-39.133952, -16.886855],
+      cor: 'red',
+      url: "https://trabalho-diw.gustavovilarino.repl.co/album1.html"
+    },
+    {
+      id: 2,
+      titulo: 'Praias de Alagoas',
+      descricao: 'Com uma barreira de corais que se estende por quase toda a costa, o estado ostenta prais que mais parecem piscinas naturais emolduradas por um vasto coqueiral. Esta é a mais pura descrição do litoral alagoano. Esse destino é encantador',
+      latlong: [-35.704522, -9.655960],
+      cor: 'green',
+      url: "https://trabalho-diw.gustavovilarino.repl.co/album2.html"
+    },
+    {
+      id: 3,
+      titulo: 'Praias de Pernambuco',
+      descricao: 'Durante todo o ano, as praias de Pernambuco são elogiadas, por visitantes do Brasil e do mundo inteiro. Suas paisagens, brisa fresca e mar quentinho, garantem muita tranquilidade e diversão. Você encontrará diversas opções de praias',
+      latlong: [-34.916256, -8.039341],
+      cor: 'blue',
+      url: "https://trabalho-diw.gustavovilarino.repl.co/album3.html" // mudar isso pra url real depois
+    },
+    {
+      id: 4,
+      titulo: 'Praias do Rio de Janeiro',
+      descricao: 'Não é a toa que o Rio de Janeiro recebeu o titulo de cidade maravilhosa. Cercada de belezas naturais e cenários paradisíacos de tirar p fôlego, a capital fluminense reserva balneários imperdíveis para desfrutar em qualquer época do ano.',
+      latlong: [-43.504079, -23.039275],
+      cor: 'red',
+      url: "https://trabalho-diw.gustavovilarino.repl.co/album4.html" // mudar isso pra url real depois
+    },
+    {
+      id: 5,
+      titulo: 'Praias do Ceará',
+      descricao: 'O litorial do Ceará recebe todos os anos inúmeras pessoas interessadas em conhecer suas belíssimas praias, algumas deleas com fama internacional, como Jericoacoara e Canoa Quebrada. O litoral do Ceará é bastante extenso, com quase 600 km de praias',
+      latlong: [-39.157829, -3.356196],
+      cor: 'green',
+      url: "https://trabalho-diw.gustavovilarino.repl.co/album5.html"
+    },
+    {
+      id: 6,
+      titulo: 'Praias do Maranhão',
+      descricao: 'Entre as incríveis dunas do Parquie Nacionais dos Lençóis Maranhenses e os manguezais, as praias do estado do Maranhão tem um visual singular no Nordeste. Nesse trecho do litoral brasileiro você pode encontrar praias desertas em vilarejos de pescadores',
+      latlong: [-44.348061, -2.666516],
+      cor: 'blue',
+      url: "https://trabalho-diw.gustavovilarino.repl.co/album6.html"
+    },
+    {
+      id: 7,
+      titulo: 'Praias do Rio Grande do Norte',
+      descricao: 'O Rio Grando do Norte é um daqueles estados onde nnão falta sol e calor, praticamente, o ano todo. O que faz com que suas praias sejam um destino de viagem maravilhoso o ano inteiro. Dentre as qualidades desse litoral podemos encontrar praias reservadas',
+      latlong: [-35.869192, -5.094319],
+      cor: 'red',
+      url: "https://trabalho-diw.gustavovilarino.repl.co/album7.html" // mudar isso pra url real depois
+    },
+    {
+      id: 8,
+      titulo: 'Praias da Paraíba',
+      descricao: 'As praias do Litoral Sul da Paraíba são excelentes opções para quem procura tranquilidade e cenários paradisíacos. Localizadas a poucos minutos da capital, João Pessoa, os visitantes podem aproveitar as incríveis belezas naturais, sendo possível ver peixes de diversas cores',
+      latlong: [-34.840868, -7.096484],
+      cor: 'green',
+      url: "https://trabalho-diw.gustavovilarino.repl.co/album8.html"
+    }
+    ]
+
+
+    const centralLatLong = [-44.038509, -15.789006]
+
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZ3VzdGF2by12aWxhcmlubyIsImEiOiJjbHBmamkxZGcxZWYyMmpuN3BkbXF6bnk2In0.Luw8OoZmNp2nM2xVKXCJNA';
+    const map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v12',
+      center: centralLatLong,
+      zoom: 3
+    });
+
+    albuns.forEach((alb) => {
+      var popup = new mapboxgl.Popup({ offset: 25 })
+        .setHTML(`<h3><a href="${alb.url}" target="_blank">${alb.titulo}</a></h3><br>
+                          ${alb.descricao}`);
+      const marker = new mapboxgl.Marker({ color: alb.cor })
+        .setLngLat(alb.latlong)
+        .setPopup(popup)
+        .addTo(map);
+    })
+
+
+
+
+
+  </script>
+  <script src="app.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+#Logotipo {
+    width: 60px;
+}
+
+a {
+    text-decoration: none;
+}
+
+#iframe
+{
+   width: 100%;
+    
+}
+
+#carouselExampleCaptions 
+{
+    max-width: 100%;
+
+}
+
+.carousel-inner img
+{
+    height: 400px;
+}
+
+#destaques
+{
+    border-bottom: solid 1px;
+}
+
+#mapa 
+{
+    border-bottom: solid 1px;
+}
+
+#albuns 
+{
+    border-bottom: solid 1px;
+}
+
+#creditos 
+{
+    border-bottom: solid 1px;
+}
+
+#foto-autoria 
+{
+    width: 20%;
+    padding-bottom: 10px;
+}
+
+#footer_conteudo_autoria
+{
+    display: inline;
+    margin-left: 10px;
+    position: absolute;
+}
+
+#footer_conteudo_autoria > p
+{
+    line-height: 10px;
+}
+
+.tela3 
+{
+    background-color: none ;
+}
+
+
+
+#descricao {
+    text-align: justify;
+}
+
+.card-text 
+{
+    text-align: justify;
+}
+
+#texto-sobre {
+    text-align: justify;
+}
+
+#map { 
+    position: relative; 
+    top: 0;
+     bottom: 0; 
+     width: 100%;
+     height: 500px;
+}
